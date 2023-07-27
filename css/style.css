@@ -1,1 +1,74 @@
 /* TODO: Make it awesome */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  font-size: 3vw;
+  margin: 0;
+}
+
+nav ul {
+  margin: 10px;
+  padding: 10px;
+}
+
+nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a:hover {
+  color: #2980b9;
+}
+
+nav a {
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+section img {
+  background-color: rgb(154, 207, 154);
+  border: 5px solid rgb(154, 207, 154);
+  width: 25vw;
+  height: 25vw;
+  object-fit: scale-down;
+}
+
+section#chart-section {
+  text-align: center;
+}
+
+canvas#chart {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid rgb(154, 207, 154);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+footer p {
+  margin: 0;
+}

@@ -11,6 +11,43 @@ let canvasElem = document.getElementById('chart')
  *
  */
 function renderChart() {
+  let state = new AppState();
+  state.loadItems();
+  let productNames = [];
+  let productTimesShown = [];
+  let productTimesClicked = [];
+  for (let index = 0; index < state.allProducts.length; index++) {
+    productNames[index] = state.allProducts[index].name;
+    productTimesShown[index] = state.allProducts[index].timesShown;
+    productTimesClicked[index] = state.allProducts[index].timesClicked;
+  }
+  let chartResults ={
+    type: 'bar',
+    data: {
+      labels: productNames,
+      datasets: [{
+        label: '# of Times Shown',
+        data: productTimesShown,
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        borderWidth: 1
+      },
+      {
+        label: '# of Times Clicked',
+        data: productTimesClicked,
+        backgroundColor: 'rgba(153, 102, 255, 0.6)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  };
+  new Chart(canvasElem, chartResults);
 }
+
 
 renderChart();
